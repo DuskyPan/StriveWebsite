@@ -1,0 +1,126 @@
+@font-face { font-family: NothingClean; src: url('Nothing Clean.otf'); }
+
+body {
+	background-image: url("sol background.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.quiz-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 80rem;
+	margin: 0 auto;
+}
+
+.choice {
+	display: flex;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	font-size: 2rem;
+	border: 0.2rem solid rgba(255, 255, 255, 1);
+}
+
+.gameText {
+    font-size: 1.8rem;
+    color: #fff2f2;
+    margin-bottom: 2rem;
+}
+
+.answer-button {
+	padding: 1.5rem;
+	width:100%;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.col {
+	color: #fff5f5;
+	background-color: #1f1e1e;
+}
+
+.choice:hover {
+	cursor: pointer;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 1);
+	transform: translateY(-0.3rem);
+	transition: transform 100ms;
+}
+
+#question {
+	color: #fff2f2;
+}
+
+.prefix{
+	color: #8b0000;
+	background-color: #fcf0f0;
+	padding: 1.5rem 2.5rem;
+}
+
+
+/*Styling for Titles*/
+h1, h2, h3, h4, h5 {
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: 4.8rem;
+	color: #161919;
+	margin-bottom: 5rem;
+}
+
+h3 {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+.wrong {
+	background-color: #e3a600; /*#750000*/
+}
+
+.right {
+	background-color: #155c1b;
+}
+
+/*Board Display*/
+
+#board {
+	display: flex;
+	justify-content: space-between;
+}
+
+.b-type {
+	text-align:center;
+	font-size: 1.8rem;
+	color: #fff2f2;
+}
+
+.board-text {
+	text-align: center;
+	color: #fff2f2;
+}
+
+/*Win/Loss Page*/
+
+.displayText {
+	font-family: NothingClean;
+	font-size: 6rem;
+	color: #fcf0f0;
+	margin-bottom: 3.5rem;
+}
+
+.buttonMenu {
+	display: flex;
+	flex-direction: column;
+}

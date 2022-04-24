@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<link rel="stylesheet" href="stylesheetQuiz.css">
+		<link rel="stylesheet" href="trivGame.css">
+		
+		<script defer src="trivQuiz.js"></script>
+		
+		<title>Trivia Quiz - Game</title>
+	</head>
+	<body>
+	<div class="quiz-container">
+		<div id="menu" class="justify-center flex-column">
+		
+			<h3 id="question">Is Sol Badguy a bad guy?</h3>
+			
+			<div class="btn-grid">
+				<div class="choice">
+					<p class="prefix">A</p>
+					<p class="answer-button col" data-number="1">Answer 1</p>
+				</div>
+			
+				<div class="choice">
+					<p class="prefix">B</p>
+					<p class="answer-button col" data-number="2">Answer 2</p>
+				</div>
+			
+				<div class="choice">
+					<p class="prefix">C</p>
+					<p class="answer-button col" data-number="3">Answer 3</p>
+				</div>
+			
+				<div class="choice">
+					<p class="prefix">D</p>
+					<p class="answer-button col" data-number="4">Answer 4</p>
+				</div>
+			</div>
+			
+			<div id="board">
+				<div id="board-item">
+					<p class="b-type">Question</p>
+					<h3 class="board-text" id="questionCount"></h3>
+				</div>
+				
+				<div id="board-item">
+					<p class="b-type">Lives</p>
+					<h3 class="board-text" id="livesCount"></h3>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	</body>
+</html>
