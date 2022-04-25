@@ -5,7 +5,6 @@ const questionCount = document.getElementById('questionCount');
 const livesCountText = document.getElementById('livesCount');
 
 //setting constant variables
-const CORRECT_POINTS = 1;
 const MAX_QUESTIONS = 15;
 const MAX_LIVES = 3;
 
@@ -35,22 +34,25 @@ startQuiz = () => {
 	getNextQuestion();
 };
 
+function randomiseQuestion(questionAmount) {
+	return Math.floor(Math.random() * questionAmount);
+}
+
 //go to next question
 getNextQuestion = () => {
 	if (currentLives == 0) {
 		return window.location.assign("trivLoss.html"); //get game over page when user loses all lives
 	}
-	
-	
-	if (availableQs.length == 0 || questionIndex >= MAX_QUESTIONS) {
+
+	if (questionIndex >= MAX_QUESTIONS || availableQs.length == 0) {
 		return window.location.assign("trivWin.html"); //get results page when user is done
 	}
 	
-	questionIndex++;
+	questionIndex =  questionIndex + 1;
 	questionCount.innerText = questionIndex + "/" + MAX_QUESTIONS;
 	livesCountText.innerText = currentLives;
 	
-	const questionNum = Math.floor(Math.random() * availableQs.length); //randomises number of question that gets picked from array
+	const questionNum = randomiseQuestion(availableQs.length); //randomises number of question that gets picked from array
 	
 	currQuestion = availableQs[questionNum]; // picks rand no from array
 	question.innerText = currQuestion.question; //actually makes the question text on the html page display the question
@@ -68,7 +70,6 @@ getNextQuestion = () => {
 answers.forEach(choice => {
 	choice.addEventListener("click", clk => {
 	if (!accAnswer) return;
-	
 	accAnswer = false;
 	const selChoice = clk.target;
 	const selAns = selChoice.dataset["number"];
@@ -78,7 +79,7 @@ answers.forEach(choice => {
 			choiceType = "right";
 		}
 	
-	if (choiceType === "wrong") {
+	if (choiceType == "wrong") {
 		loseLife();
 	}
 	
@@ -86,11 +87,11 @@ answers.forEach(choice => {
 	selChoice.classList.remove("col");
 	selChoice.parentElement.classList.add(choiceType);
 	
-	setTimeout(() => {
+	transTime(() => {
 		selChoice.parentElement.classList.remove(choiceType);
 		selChoice.classList.add("col");
 		getNextQuestion();
-	}, 1000);
+	}, 750);
 	
 	});
 });
