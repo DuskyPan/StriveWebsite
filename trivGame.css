@@ -1,5 +1,8 @@
 @font-face { font-family: NothingClean; src: url('Nothing Clean.otf'); }
 
+/*   Author: Lyubomir Gaydadzhiev
+	 Matri No.: 40485552*/
+
 body {
 	background-image: url("sol background.jpg");
 	height: 100%;

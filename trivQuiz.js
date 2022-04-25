@@ -1,3 +1,6 @@
+//   Author: Lyubomir Gaydadzhiev
+//	 Matri No.: 40485552
+
 //relating elements on the html page to js variables
 const question = document.getElementById("question");
 const answers = Array.from(document.getElementsByClassName('answer-button'));
