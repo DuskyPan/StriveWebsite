@@ -30,13 +30,12 @@ startQuiz = () => {
 	questionIndex = 0;
 	currentLives = MAX_LIVES;
 	availableQs = [...questionBank];
-	console.log(availableQs);
 	getNextQuestion();
 };
 
 function randomiseQuestion(questionAmount) {
 	return Math.floor(Math.random() * questionAmount);
-}
+};
 
 //go to next question
 getNextQuestion = () => {
@@ -91,7 +90,7 @@ answers.forEach(choice => {
 		selChoice.parentElement.classList.remove(choiceType);
 		selChoice.classList.add("col");
 		getNextQuestion();
-	}, 750);
+	}, 1500);
 	
 	});
 });
