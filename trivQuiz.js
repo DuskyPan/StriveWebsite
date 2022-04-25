@@ -69,12 +69,14 @@ getNextQuestion = () => {
 answers.forEach(choice => {
 	choice.addEventListener("click", clk => {
 	if (!accAnswer) return;
+	
 	accAnswer = false;
 	const selChoice = clk.target;
 	const selAns = selChoice.dataset["number"];
 	
 	let choiceType = "wrong";
-		if (selAns == currQuestion.correct) {
+		
+	if (selAns == currQuestion.correct) {
 			choiceType = "right";
 		}
 	
@@ -86,11 +88,12 @@ answers.forEach(choice => {
 	selChoice.classList.remove("col");
 	selChoice.parentElement.classList.add(choiceType);
 	
-	transTime(() => {
+	//This function makes sure to briefly pause before moving on the next question
+	setTimeout(() => {
 		selChoice.parentElement.classList.remove(choiceType);
 		selChoice.classList.add("col");
 		getNextQuestion();
-	}, 1500);
+	}, 800);
 	
 	});
 });
