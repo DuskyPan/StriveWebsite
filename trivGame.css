@@ -100,7 +100,8 @@ h3 {
 /*Board Display*/
 
 .board {
-	display: center;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .b-type {
