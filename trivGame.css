@@ -100,9 +100,7 @@ h3 {
 /*Board Display*/
 
 .board {
-	align-items: center;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+	display: center;
 }
 
 .b-type {
