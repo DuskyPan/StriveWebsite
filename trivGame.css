@@ -99,9 +99,10 @@ h3 {
 
 /*Board Display*/
 
-#board {
-	display: flex;
-	justify-content: space-between;
+.board {
+	display: center;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 .b-type {
