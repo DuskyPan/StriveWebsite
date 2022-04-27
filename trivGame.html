@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="stylesheetQuiz.css">
 		<link rel="stylesheet" href="trivGame.css">
 		
-		<script defer src="trivQuizTest.js"></script>
+		<script defer src="trivQuiz.js"></script>
 		
 		<title>Trivia Quiz - Game</title>
 	</head>
@@ -18,15 +18,9 @@
 	<div class="quiz-container">
 		<div id="menu" class="justify-center flex-column">
 		
-		<div id="questionCountC">
-				<p class="b-type">Question</p>
-			<h3 class="board-text" id="questionCount"></h3>
-		</div>
-		
-		
 <!-- Question Template -->
 
-			<h3 id="question">Example question?</h3>
+			<h3 id="question">Is Sol Badguy a bad guy?</h3>
 			
 			<!-- Answer Grid Template -->
 
@@ -52,7 +46,12 @@
 				</div>
 			</div>
 			
-			<div id="heartContainer">
+			<div id="board">
+				<div id="board-item">
+					<p class="b-type">Question</p>
+					<h3 class="board-text" id="questionCount"></h3>
+				</div>
+				
 				<div id="board-item">
 					<p class="b-type">Lives</p>
 					<h3 class="board-text" id="livesCount"></h3>

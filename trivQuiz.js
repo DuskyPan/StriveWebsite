@@ -3,7 +3,12 @@
 
 //relating elements on the html page to js variables
 const question = document.getElementById("question");
-const answers = Array.from(document.getElementsByClassName('answer-button'));
+var answers = document.querySelectorAll('.answer-button');
+var answerArray = [].slice.call(answers);
+
+for (let i = 0; i < answerArray.length; i++) {
+  console.log(answerArray[i]);
+} //testing to see if array is populated
 const questionCount = document.getElementById('questionCount');
 const livesCountText = document.getElementById('livesCount');
 
@@ -19,6 +24,7 @@ let currentLives = 0;
 
 let questionBank = [];
 
+//
 fetch("questionBank.json")
 	.then( rep => {
 		return rep.json();
@@ -82,7 +88,6 @@ answers.forEach(choice => {
 	if (selAns == currQuestion.correct) {
 			choiceType = "right";
 		}
-	
 	if (choiceType == "wrong") {
 		loseLife();
 	}
@@ -91,7 +96,7 @@ answers.forEach(choice => {
 	selChoice.classList.remove("col");
 	selChoice.parentElement.classList.add(choiceType);
 	
-	//This function makes sure to briefly pause before moving on the next question
+	//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
 	setTimeout(() => {
 		selChoice.parentElement.classList.remove(choiceType);
 		selChoice.classList.add("col");
