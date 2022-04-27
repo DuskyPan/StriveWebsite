@@ -14,11 +14,11 @@ body {
 .quiz-container {
 	width: 100vw;
 	height: 100vh;
-	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 75rem;
+	max-width: 80rem;
+	margin: 0 auto;
 }
 
 .choice {
@@ -51,15 +51,13 @@ body {
 .choice:hover {
 	cursor: pointer;
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 1);
-	
+	transform: translateY(-0.3rem);
 	transition: transform 100ms;
-	transform: skew(-10deg);
 }
 
 #question {
 	color: #fff2f2;
 }
-
 
 .prefix{
 	color: #8b0000;
