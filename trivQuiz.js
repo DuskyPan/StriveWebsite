@@ -24,6 +24,8 @@ let currentLives = 0;
 
 let questionBank = [];
 
+startQuiz();
+
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - source for fetch api usage
 fetch("questionBank.json")
 	.then( rep => {
@@ -34,7 +36,7 @@ fetch("questionBank.json")
 });
 
 //main
-startQuiz = () => {
+function startQuiz() {
 	questionIndex = 0;
 	currentLives = MAX_LIVES;
 	availableQs = [...questionBank];
@@ -110,5 +112,3 @@ function loseLife() {
 	currentLives = currentLives - 1;
 	livesCountText.innerText = currentLives;
 };
-
-startQuiz();
