@@ -11,14 +11,14 @@ body {
 	background-size: cover;
 }
 
-.quiz-container {
+.quiz-container-game {
+	margin: 0 auto;
+	max-width: 85rem;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 80rem;
-	margin: 0 auto;
 }
 
 .choice {
