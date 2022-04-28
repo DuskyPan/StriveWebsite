@@ -89,7 +89,7 @@ h3 {
 
 /*Board Display*/
 
-.board {
+#board {
 	justify-content: space-evenly;
 	display: flex;
 }
