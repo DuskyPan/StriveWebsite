@@ -94,6 +94,12 @@ h3 {
 	display: flex;
 }
 
+.b-style {
+	padding: 1rem;
+	border: 0.5rem solid rgb(255, 255, 255);
+	margin: 0;
+}
+
 .b-header {
 	text-align:center;
 	font-size: 1.8rem;
