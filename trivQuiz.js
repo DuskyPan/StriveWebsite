@@ -24,14 +24,13 @@ let currentLives = 0;
 
 let questionBank = [];
 
-//
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - source for fetch api usage
 fetch("questionBank.json")
 	.then( rep => {
 		return rep.json();
 	})
 	.then(loadQs => {
 		questionBank = loadQs;
-		startQuiz();
 });
 
 //main
@@ -47,7 +46,7 @@ startQuiz = () => {
 		
 		accAnswer = false;
 		const selChoice = clk.target;
-		const selAns = selChoice.dataset["number"];
+		const selAns = selChoice.dataset["number"]; // this is where james q quick's video helped with datasets
 		
 		let choiceType = "wrong";
 			
@@ -111,3 +110,5 @@ function loseLife() {
 	currentLives = currentLives - 1;
 	livesCountText.innerText = currentLives;
 };
+
+startQuiz();
