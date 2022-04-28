@@ -40,6 +40,7 @@ startQuiz = () => {
 	currentLives = MAX_LIVES;
 	availableQs = [...questionBank];
 	getNextQuestion();
+	answerCheck();
 };
 
 function randomiseQuestion(questionAmount) {
@@ -73,7 +74,6 @@ function getNextQuestion() {
 	availableQs.splice(questionNum, 1); //makes sure to remove used question from array so it doesn't repeat
 	accAnswer = true;
 
-	answerCheck();
 };
 
 function answerCheck() {//check if user clicks on answers
