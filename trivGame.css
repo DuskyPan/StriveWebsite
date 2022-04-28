@@ -59,12 +59,12 @@ body {
 	color: #fff2f2;
 }
 
-.prefix{
+/*.prefix{
 	color: #8b0000;
 	background-color: #fcf0f0;
 	padding: 1.5rem 2.5rem;
 }
-
+*/
 
 /*Styling for Titles*/
 h1, h2, h3, h4, h5 {
@@ -100,8 +100,8 @@ h3 {
 /*Board Display*/
 
 .board {
-	display: flex;
 	justify-content: space-evenly;
+	display: flex;
 }
 
 .b-type {
