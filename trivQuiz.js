@@ -40,7 +40,37 @@ startQuiz = () => {
 	currentLives = MAX_LIVES;
 	availableQs = [...questionBank];
 	getNextQuestion();
-	answerCheck();
+
+	answers.forEach(choice => {
+		choice.addEventListener("click", clk => {
+		if (!accAnswer) return;
+		
+		accAnswer = false;
+		const selChoice = clk.target;
+		const selAns = selChoice.dataset["number"];
+		
+		let choiceType = "wrong";
+			
+		if (selAns == currQuestion.correct) {
+				choiceType = "right";
+			}
+		if (choiceType == "wrong") {
+			loseLife();
+		}
+		
+		//removes and reapplies correct colour
+		selChoice.classList.remove("col");
+		selChoice.parentElement.classList.add(choiceType);
+		
+		//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
+		setTimeout(() => {
+			selChoice.parentElement.classList.remove(choiceType);
+			selChoice.classList.add("col");
+			getNextQuestion();
+		}, 800);
+		
+		});
+	});
 };
 
 function randomiseQuestion(questionAmount) {
@@ -75,40 +105,6 @@ function getNextQuestion() {
 	accAnswer = true;
 
 };
-
-function answerCheck() {//check if user clicks on answers
-answers.forEach(choice => {
-	choice.addEventListener("click", clk => {
-	if (!accAnswer) return;
-	
-	accAnswer = false;
-	const selChoice = clk.target;
-	const selAns = selChoice.dataset["number"];
-	
-	let choiceType = "wrong";
-		
-	if (selAns == currQuestion.correct) {
-			choiceType = "right";
-		}
-	if (choiceType == "wrong") {
-		loseLife();
-	}
-	
-	//removes and reapplies correct colour
-	selChoice.classList.remove("col");
-	selChoice.parentElement.classList.add(choiceType);
-	
-	//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
-	setTimeout(() => {
-		selChoice.parentElement.classList.remove(choiceType);
-		selChoice.classList.add("col");
-		getNextQuestion();
-	}, 800);
-	
-	});
-});
-
-}
 
 function loseLife() {
 	currentLives = currentLives - 1;
