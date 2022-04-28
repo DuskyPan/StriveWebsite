@@ -34,6 +34,41 @@ fetch("questionBank.json")
 		
 		//starts quiz
 		startQuiz();
+
+		//starts listening for user input
+		answers.forEach(choice => {
+			choice.addEventListener("click", clk => {
+			if (!accAnswer) return;
+			
+			accAnswer = false;
+			const selChoice = clk.target;
+			const selAns = selChoice.dataset["number"]; // this is where james q quick's video helped with datasets
+			
+			let choiceType = "wrong";
+				
+			if (selAns == currQuestion.correct) {
+					choiceType = "right";
+					//removes and reapplies correct colour
+					selChoice.classList.remove("col");
+					selChoice.parentElement.classList.add(choiceType);
+				}
+			if (choiceType == "wrong") {
+				selChoice.classList.remove("col");
+				selChoice.parentElement.classList.add(choiceType);
+				loseLife();
+			}
+			
+			
+			//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
+			//https://developer.mozilla.org/en-US/docs/Web/API/setTimeout - link where I found out how to use the js function 
+			setTimeout(() => {
+				selChoice.parentElement.classList.remove(choiceType);
+				selChoice.classList.add("col");
+				getNextQuestion();
+			}, 800);
+			
+			});
+		});
 });
 
 
@@ -43,40 +78,6 @@ function startQuiz() {
 	currentLives = MAX_LIVES;
 	availableQs = [...questionBank];
 	getNextQuestion();
-
-	answers.forEach(choice => {
-		choice.addEventListener("click", clk => {
-		if (!accAnswer) return;
-		
-		accAnswer = false;
-		const selChoice = clk.target;
-		const selAns = selChoice.dataset["number"]; // this is where james q quick's video helped with datasets
-		
-		let choiceType = "wrong";
-			
-		if (selAns == currQuestion.correct) {
-				choiceType = "right";
-				//removes and reapplies correct colour
-				selChoice.classList.remove("col");
-				selChoice.parentElement.classList.add(choiceType);
-			}
-		if (choiceType == "wrong") {
-			selChoice.classList.remove("col");
-			selChoice.parentElement.classList.add(choiceType);
-			loseLife();
-		}
-		
-		
-		//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
-		//https://developer.mozilla.org/en-US/docs/Web/API/setTimeout - link where I found out how to use the js function 
-		setTimeout(() => {
-			selChoice.parentElement.classList.remove(choiceType);
-			selChoice.classList.add("col");
-			getNextQuestion();
-		}, 800);
-		
-		});
-	});
 };
 
 function randomiseQuestion(questionAmount) {
