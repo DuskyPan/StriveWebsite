@@ -31,8 +31,11 @@ fetch("questionBank.json")
 	})
 	.then(loadQs => {
 		questionBank = loadQs;
-		startQuiz();
+		
 });
+
+//starts quiz
+startQuiz();
 
 //main
 function startQuiz() {
