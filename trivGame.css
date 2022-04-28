@@ -51,7 +51,7 @@ body {
 .choice:hover {
 	cursor: pointer;
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 1);
-	transform: translateY(-0.3rem);
+	transform: skew(-0.03turn, 15deg);
 	transition: transform 100ms;
 }
 
