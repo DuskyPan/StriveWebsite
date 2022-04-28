@@ -47,7 +47,7 @@ function randomiseQuestion(questionAmount) {
 };
 
 //go to next question
-getNextQuestion = () => {
+function getNextQuestion() {
 	if (currentLives == 0) {
 		return window.location.assign("trivLoss.html"); //get game over page when user loses all lives
 	}
@@ -72,9 +72,11 @@ getNextQuestion = () => {
 	
 	availableQs.splice(questionNum, 1); //makes sure to remove used question from array so it doesn't repeat
 	accAnswer = true;
+
+	answerCheck();
 };
 
-//check if user clicks on answers
+function answerCheck() {//check if user clicks on answers
 answers.forEach(choice => {
 	choice.addEventListener("click", clk => {
 	if (!accAnswer) return;
@@ -106,7 +108,9 @@ answers.forEach(choice => {
 	});
 });
 
-loseLife = () => {
+}
+
+function loseLife() {
 	currentLives = currentLives - 1;
 	livesCountText.innerText = currentLives;
 };
