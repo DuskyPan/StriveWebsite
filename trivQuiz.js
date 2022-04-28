@@ -24,8 +24,6 @@ let currentLives = 0;
 
 let questionBank = [];
 
-startQuiz();
-
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - source for fetch api usage
 fetch("questionBank.json")
 	.then( rep => {
@@ -33,6 +31,7 @@ fetch("questionBank.json")
 	})
 	.then(loadQs => {
 		questionBank = loadQs;
+		startQuiz();
 });
 
 //main
