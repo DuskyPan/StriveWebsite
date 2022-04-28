@@ -1,7 +1,7 @@
-@font-face { font-family: NothingClean; src: url('Nothing Clean.otf'); } 
-
 /*   Author: Lyubomir Gaydadzhiev
 	 Matri No.: 40485552*/
+
+@font-face { font-family: NothingClean; src: url('Nothing Clean.otf'); } 
 
 :root {
 	background-color: #8b0000;
@@ -61,9 +61,6 @@ footer {
 	background-size: cover;
 }
 
-h1, h2, h3, h4, h5 {
-	margin-bottom: 1rem;
-}
 
 h1 {
 	font-size: 4.8rem;
@@ -89,7 +86,7 @@ h3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 80rem;
+	max-width: 85rem;
 	margin: 0 auto;
 }
 
@@ -103,7 +100,7 @@ h3 {
 	display: flex-start;
 	justify-content: center;
 	align-items: center;
-	max-width: 80rem;
+	max-width: 85rem;
 	margin: 0 auto;
 	margin-top: 3rem;
 
@@ -134,7 +131,8 @@ h3 {
 	color:#FFFFFF;
 }
 
-/*USEFUL CLASSES*/
+
+/*CONTAINER FORMATTING*/
 
 .text-center {
 	text-align: center;
@@ -144,16 +142,15 @@ h3 {
 	display: none;
 }
 
-.justify-center {
-	justify-content: center;
-}
-
-.flex-center {
+.alignCon {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.flex-column {
+.alignFormat {
+	justify-content: center;
 	display: flex;
 	flex-direction: column;
 }
