@@ -8,7 +8,7 @@ var answerArray = [].slice.call(answers);
 
 for (let i = 0; i < answerArray.length; i++) {
   console.log(answerArray[i]);
-} //testing to see if array is populated
+} //testing to see if array is populated properly
 const questionCount = document.getElementById('questionCount');
 const livesCountText = document.getElementById('livesCount');
 
