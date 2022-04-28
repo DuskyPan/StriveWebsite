@@ -87,11 +87,11 @@ function randomiseQuestion(questionAmount) {
 //go to next question
 function getNextQuestion() {
 	if (currentLives == 0) {
-		return window.location.replace("/trivLoss.html"); //get game over page when user loses all lives
+		return window.location.replace("/StriveWebsite/trivLoss.html"); //get game over page when user loses all lives
 	}
 
 	if (questionIndex >= MAX_QUESTIONS || availableQs.length == 0) {
-		return window.location.replace("/trivWin.html"); //get results page when user is done
+		return window.location.replace("/StriveWebsite/trivWin.html"); //get results page when user is done
 	}
 	
 	questionIndex =  questionIndex + 1;
