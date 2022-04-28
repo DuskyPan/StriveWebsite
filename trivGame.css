@@ -94,6 +94,11 @@ h3 {
 	display: flex;
 }
 
+.boardButton {
+	justify-content: space-between;
+	display: flex;
+}
+
 .b-style {
 	padding: 1rem;
 	border: 0.5rem solid rgb(255, 255, 255);
