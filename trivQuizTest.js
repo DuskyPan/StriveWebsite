@@ -47,7 +47,8 @@ startQuiz = () => {
 };
 
 //check if user clicks on answers []
-answerArray.forEach(answer => {addEventListener("click", clk => {
+answerArray.forEach(answer => {
+	answer.addEventListener("click", clk => {
 		if (!accAnswer) return;
 
 		accAnswer = false;
@@ -77,14 +78,13 @@ answerArray.forEach(answer => {addEventListener("click", clk => {
 	});
 });
 
-//randomises input
+
 function randomiseQuestion(questionAmount) {
 	return Math.floor(Math.random() * questionAmount);
 };
 
 //go to next question
 getNextQuestion = () => {
-	
 	if (currentLives == 0) {
 		return window.location.assign("trivLoss.html"); //get game over page when user loses all lives
 	}
@@ -102,8 +102,6 @@ getNextQuestion = () => {
 	currQuestion = availableQs[questionNum]; // picks rand no from array
 	
 	
-	question.innerText = currQuestion.question; //actually makes the question text on the html page display the question
-	
 	for (let answer = 0; answer < answerArray.length; answer++) {
 		
 		const no = answerArray[answer].dataset["number"];
@@ -111,6 +109,7 @@ getNextQuestion = () => {
 	}
 	
 	availableQs.splice(questionNum, 1); //makes sure to remove used question from array so it doesn't repeat
+	question.innerText = currQuestion.question; //actually makes the question text on the html page display the question
 	accAnswer = true;
 };
 
