@@ -32,10 +32,10 @@ fetch("questionBank.json")
 	.then(loadQs => {
 		questionBank = loadQs;
 		
+		//starts quiz
+		startQuiz();
 });
 
-//starts quiz
-startQuiz();
 
 //main
 function startQuiz() {
@@ -56,14 +56,16 @@ function startQuiz() {
 			
 		if (selAns == currQuestion.correct) {
 				choiceType = "right";
+				//removes and reapplies correct colour
+				selChoice.classList.remove("col");
+				selChoice.parentElement.classList.add(choiceType);
 			}
 		if (choiceType == "wrong") {
+			selChoice.classList.remove("col");
+			selChoice.parentElement.classList.add(choiceType);
 			loseLife();
 		}
 		
-		//removes and reapplies correct colour
-		selChoice.classList.remove("col");
-		selChoice.parentElement.classList.add(choiceType);
 		
 		//This function makes sure to briefly pause and apply appropriate colour before moving on the next question
 		//https://developer.mozilla.org/en-US/docs/Web/API/setTimeout - link where I found out how to use the js function 
