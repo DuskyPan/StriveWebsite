@@ -103,10 +103,10 @@ function getNextQuestion() {
 	currQuestion = availableQs[questionNum]; // picks rand no from array
 	question.innerText = currQuestion.question; //actually makes the question text on the html page display the question
 	
-	answers.forEach(choice => {
-		const no = choice.dataset["number"];
-		choice.innerText = currQuestion["answer" + no];
-	});
+	for (let answer = 0; answer < answerArray.length; answer++) {
+		const no = answerArray[answer].dataset["number"];
+		answerArray[answer].innerText = currQuestion["answer" + no];
+	};
 	
 	availableQs.splice(questionNum, 1); //makes sure to remove used question from array so it doesn't repeat
 	accAnswer = true;
