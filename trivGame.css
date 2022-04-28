@@ -105,6 +105,12 @@ h3 {
 	margin: 0;
 }
 
+.b-prog {
+	padding: 1rem;
+	border: 0.5rem solid rgb(255, 255, 255);
+    margin: 0 0 0 1rem;
+}
+
 .b-header {
 	text-align:center;
 	font-size: 1.8rem;
